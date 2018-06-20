@@ -65,9 +65,7 @@ def winner(board)
 end
 
 def won?(board)
-      if
-      WIN_COMBINATIONS.find { |win_combo|
-      winning_combo = win_combo
+      winnning_combo = (WIN_COMBINATIONS.find { |win_combo|
       win_index_1 = win_combo[0]
       win_index_2 = win_combo[1]
       win_index_3 = win_combo[2]
@@ -76,7 +74,9 @@ def won?(board)
       position_2 = board[win_index_2]
       position_3 = board[win_index_3]
 
-      (position_1 == "X" && position_2 == "X" && position_3 == "X") || (position_1 == "O" && position_2 == "O" && position_3 == "O")}
+      (position_1 == "X" && position_2 == "X" && position_3 == "X") || (position_1 == "O" && position_2 == "O" && position_3 == "O")})
+      if winning_combo != []
+        winning_combo
       else
         false
       end
