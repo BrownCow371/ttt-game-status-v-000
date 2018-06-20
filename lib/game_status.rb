@@ -15,7 +15,7 @@ WIN_COMBINATIONS = [
     [2,4,6]
   ]
 
-  def working?(board)
+  def won?(board)
       winning_combo = []
       if
         WIN_COMBINATIONS.any? { |win_combo|
@@ -64,7 +64,7 @@ def winner(board)
   end
 end
 
-def woorking2?(board)
+def won3?(board)
       winning_combo = (WIN_COMBINATIONS.find { |win_combo|
       win_index_1 = win_combo[0]
       win_index_2 = win_combo[1]
@@ -82,10 +82,23 @@ def woorking2?(board)
       end
 end
 
-def won?(board)
+def wonsolution?(board)
   WIN_COMBINATIONS.detect do |combo|
     board[combo[0]] == board[combo[1]] &&
     board[combo[1]] == board[combo[2]] &&
     position_taken?(board, combo[0])
   end
+end
+
+def won2?(board)
+      WIN_COMBINATIONS.find { |win_combo|
+      win_index_1 = win_combo[0]
+      win_index_2 = win_combo[1]
+      win_index_3 = win_combo[2]
+
+      position_1 = board[win_index_1]
+      position_2 = board[win_index_2]
+      position_3 = board[win_index_3]
+
+      (position_1 == "X" && position_2 == "X" && position_3 == "X") || (position_1 == "O" && position_2 == "O" && position_3 == "O")}
 end
